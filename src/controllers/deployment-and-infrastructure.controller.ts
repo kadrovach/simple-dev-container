@@ -14,23 +14,23 @@ export const deploymentandinfrastructureController = {
    * 3. README file explains how to run the application
    * 4. Git history shows logical commit progression
    */
-  static async set_up_github_repository(req: Request, res: Response): Promise<void> {
+  async set_up_github_repository(req: Request, res: Response): Promise<void> {
     try {
       const result = await deploymentandinfrastructureService.set_up_github_repository(req.body);
       res.json({ success: true, data: result });
     } catch (error: any) {
       res.status(400).json({ success: false, error: error.message });
     }
-  }
+  },
 
-  static async getSet_up_github_repository(req: Request, res: Response): Promise<void> {
+  async getSet_up_github_repository(req: Request, res: Response): Promise<void> {
     try {
       const result = await deploymentandinfrastructureService.getSet_up_github_repository(req.query);
       res.json({ success: true, data: result });
     } catch (error: any) {
       res.status(400).json({ success: false, error: error.message });
     }
-  }
+  },
 
   /**
    * Create Docker Container
@@ -44,16 +44,16 @@ export const deploymentandinfrastructureController = {
    * 3. Application is accessible via web browser when container is running
    * 4. All dependencies are properly included in the container image
    */
-  static async create_docker_container(req: Request, res: Response): Promise<void> {
+  async create_docker_container(req: Request, res: Response): Promise<void> {
     try {
       const result = await deploymentandinfrastructureService.create_docker_container(req.body);
       res.json({ success: true, data: result });
     } catch (error: any) {
       res.status(400).json({ success: false, error: error.message });
     }
-  }
+  },
 
-  static async getCreate_docker_container(req: Request, res: Response): Promise<void> {
+  async getCreate_docker_container(req: Request, res: Response): Promise<void> {
     try {
       const result = await deploymentandinfrastructureService.getCreate_docker_container(req.query);
       res.json({ success: true, data: result });
