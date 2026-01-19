@@ -14,23 +14,23 @@ export const userinterfaceandnavigationController = {
    * 3. Navigation to login functionality is clearly visible
    * 4. Page loads within 3 seconds
    */
-  async create_home_page(req: Request, res: Response): Promise<void> {
+  static async create_home_page(req: Request, res: Response): Promise<void> {
     try {
       const result = await userinterfaceandnavigationService.create_home_page(req.body);
       res.json({ success: true, data: result });
     } catch (error: any) {
       res.status(400).json({ success: false, error: error.message });
     }
-  },
+  }
 
-  async getCreate_home_page(req: Request, res: Response): Promise<void> {
+  static async getCreate_home_page(req: Request, res: Response): Promise<void> {
     try {
       const result = await userinterfaceandnavigationService.getCreate_home_page(req.query);
       res.json({ success: true, data: result });
     } catch (error: any) {
       res.status(400).json({ success: false, error: error.message });
     }
-  },
+  }
 
   /**
    * Create Login Page
@@ -44,23 +44,23 @@ export const userinterfaceandnavigationController = {
    * 3. Successful login redirects user to search page
    * 4. Form validation provides clear error messages for invalid inputs
    */
-  async create_login_page(req: Request, res: Response): Promise<void> {
+  static async create_login_page(req: Request, res: Response): Promise<void> {
     try {
       const result = await userinterfaceandnavigationService.create_login_page(req.body);
       res.json({ success: true, data: result });
     } catch (error: any) {
       res.status(400).json({ success: false, error: error.message });
     }
-  },
+  }
 
-  async getCreate_login_page(req: Request, res: Response): Promise<void> {
+  static async getCreate_login_page(req: Request, res: Response): Promise<void> {
     try {
       const result = await userinterfaceandnavigationService.getCreate_login_page(req.query);
       res.json({ success: true, data: result });
     } catch (error: any) {
       res.status(400).json({ success: false, error: error.message });
     }
-  },
+  }
 
   /**
    * Create Search Interface
@@ -74,16 +74,16 @@ export const userinterfaceandnavigationController = {
    * 3. Interface is intuitive and user-friendly
    * 4. Loading state is shown during search processing
    */
-  async create_search_interface(req: Request, res: Response): Promise<void> {
+  static async create_search_interface(req: Request, res: Response): Promise<void> {
     try {
       const result = await userinterfaceandnavigationService.create_search_interface(req.body);
       res.json({ success: true, data: result });
     } catch (error: any) {
       res.status(400).json({ success: false, error: error.message });
     }
-  },
+  }
 
-  async getCreate_search_interface(req: Request, res: Response): Promise<void> {
+  static async getCreate_search_interface(req: Request, res: Response): Promise<void> {
     try {
       const result = await userinterfaceandnavigationService.getCreate_search_interface(req.query);
       res.json({ success: true, data: result });

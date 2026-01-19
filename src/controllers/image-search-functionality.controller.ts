@@ -14,23 +14,23 @@ export const imagesearchfunctionalityController = {
    * 3. Only the first image result is retrieved and processed
    * 4. API errors are handled gracefully with user-friendly messages
    */
-  async implement_unsplash_api_integration(req: Request, res: Response): Promise<void> {
+  static async implement_unsplash_api_integration(req: Request, res: Response): Promise<void> {
     try {
       const result = await imagesearchfunctionalityService.implement_unsplash_api_integration(req.body);
       res.json({ success: true, data: result });
     } catch (error: any) {
       res.status(400).json({ success: false, error: error.message });
     }
-  },
+  }
 
-  async getImplement_unsplash_api_integration(req: Request, res: Response): Promise<void> {
+  static async getImplement_unsplash_api_integration(req: Request, res: Response): Promise<void> {
     try {
       const result = await imagesearchfunctionalityService.getImplement_unsplash_api_integration(req.query);
       res.json({ success: true, data: result });
     } catch (error: any) {
       res.status(400).json({ success: false, error: error.message });
     }
-  },
+  }
 
   /**
    * Display Search Results
@@ -44,23 +44,23 @@ export const imagesearchfunctionalityController = {
    * 3. Search term context is maintained and visible
    * 4. Image loads completely before being shown to user
    */
-  async display_search_results(req: Request, res: Response): Promise<void> {
+  static async display_search_results(req: Request, res: Response): Promise<void> {
     try {
       const result = await imagesearchfunctionalityService.display_search_results(req.body);
       res.json({ success: true, data: result });
     } catch (error: any) {
       res.status(400).json({ success: false, error: error.message });
     }
-  },
+  }
 
-  async getDisplay_search_results(req: Request, res: Response): Promise<void> {
+  static async getDisplay_search_results(req: Request, res: Response): Promise<void> {
     try {
       const result = await imagesearchfunctionalityService.getDisplay_search_results(req.query);
       res.json({ success: true, data: result });
     } catch (error: any) {
       res.status(400).json({ success: false, error: error.message });
     }
-  },
+  }
 
   /**
    * Implement Search Again Functionality
@@ -74,16 +74,16 @@ export const imagesearchfunctionalityController = {
    * 3. No option provides appropriate end state or navigation
    * 4. User can perform multiple searches in the same session
    */
-  async implement_search_again_functionality(req: Request, res: Response): Promise<void> {
+  static async implement_search_again_functionality(req: Request, res: Response): Promise<void> {
     try {
       const result = await imagesearchfunctionalityService.implement_search_again_functionality(req.body);
       res.json({ success: true, data: result });
     } catch (error: any) {
       res.status(400).json({ success: false, error: error.message });
     }
-  },
+  }
 
-  async getImplement_search_again_functionality(req: Request, res: Response): Promise<void> {
+  static async getImplement_search_again_functionality(req: Request, res: Response): Promise<void> {
     try {
       const result = await imagesearchfunctionalityService.getImplement_search_again_functionality(req.query);
       res.json({ success: true, data: result });
