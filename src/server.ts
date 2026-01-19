@@ -1,6 +1,7 @@
 import express from 'express';
 import cors from 'cors';
 import helmet from 'helmet';
+import path from 'path';
 
 import { userinterfaceandnavigationRouter } from './routes/user-interface-and-navigation';
 import { imagesearchfunctionalityRouter } from './routes/image-search-functionality';
@@ -10,26 +11,19 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 // Middleware
-app.use(helmet());
+app.use(helmet({
+  contentSecurityPolicy: false, // Allow inline scripts for demo purposes
+}));
 app.use(cors());
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
+// Serve static files from public directory
+app.use(express.static(path.join(__dirname, '../public')));
 
 // Health check endpoint
 app.get('/health', (_req, res) => {
   res.json({ status: 'healthy', timestamp: new Date().toISOString() });
-});
-
-// Root endpoint
-app.get('/', (_req, res) => {
-  res.json({
-    message: 'API is running',
-    version: '1.0.0',
-    endpoints: {
-      health: '/health',
-      api: '/api/*'
-    },
-    timestamp: new Date().toISOString()
-  });
 });
 
 // Routes
