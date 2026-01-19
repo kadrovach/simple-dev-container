@@ -25,7 +25,7 @@ export const imagesearchfunctionalityController = {
 
   async getImplement_unsplash_api_integration(req: Request, res: Response): Promise<void> {
     try {
-      const result = await imagesearchfunctionalityService.getImplement_unsplash_api_integration(req.query);
+      const result = await imagesearchfunctionalityService.getImplement_unsplash_api_integration(req.query as any);
       res.json({ success: true, data: result });
     } catch (error: any) {
       res.status(400).json({ success: false, error: error.message });
@@ -55,7 +55,7 @@ export const imagesearchfunctionalityController = {
 
   async getDisplay_search_results(req: Request, res: Response): Promise<void> {
     try {
-      const result = await imagesearchfunctionalityService.getDisplay_search_results(req.query);
+      const result = await imagesearchfunctionalityService.getDisplay_search_results(req.query as any);
       res.json({ success: true, data: result });
     } catch (error: any) {
       res.status(400).json({ success: false, error: error.message });
@@ -85,7 +85,7 @@ export const imagesearchfunctionalityController = {
 
   async getImplement_search_again_functionality(req: Request, res: Response): Promise<void> {
     try {
-      const result = await imagesearchfunctionalityService.getImplement_search_again_functionality(req.query);
+      const result = await imagesearchfunctionalityService.getImplement_search_again_functionality(req.query as any);
       res.json({ success: true, data: result });
     } catch (error: any) {
       res.status(400).json({ success: false, error: error.message });

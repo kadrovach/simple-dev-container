@@ -18,9 +18,9 @@ export const userinterfaceandnavigationService = {
     };
   },
 
-  async getCreate_home_page(query: any): Promise<any> {
+  async getCreate_home_page(data: any): Promise<any> {
     // TODO: Implement retrieval logic
-    console.log('Retrieving create_home_page with query:', query);
+    console.log('Retrieving create_home_page with query:', data);
     return {
       message: 'Create Home Page executed successfully',
       input: data,
@@ -40,8 +40,8 @@ export const userinterfaceandnavigationService = {
       success: true,
       user: {
         id: '123',
-        username: data?.username || 'user',
-        email: data?.email || 'user@example.com',
+        username: (data as any)?.username || 'user',
+        email: (data as any)?.email || 'user@example.com',
         token: 'sample-jwt-token-' + Date.now(),
       },
       message: 'Login successful',
@@ -49,15 +49,15 @@ export const userinterfaceandnavigationService = {
     };
   },
 
-  async getCreate_login_page(query: any): Promise<any> {
+  async getCreate_login_page(data: any): Promise<any> {
     // TODO: Implement retrieval logic
-    console.log('Retrieving create_login_page with query:', query);
+    console.log('Retrieving create_login_page with query:', data);
     return {
       success: true,
       user: {
         id: '123',
-        username: data?.username || 'user',
-        email: data?.email || 'user@example.com',
+        username: (data as any)?.username || 'user',
+        email: (data as any)?.email || 'user@example.com',
         token: 'sample-jwt-token-' + Date.now(),
       },
       message: 'Login successful',
@@ -79,57 +79,57 @@ export const userinterfaceandnavigationService = {
           id: '1',
           url: 'https://picsum.photos/800/600?random=1',
           thumbnail: 'https://picsum.photos/200/150?random=1',
-          title: data?.query || 'Sample Image 1',
+          title: (data as any)?.query || 'Sample Image 1',
           description: 'This is a placeholder image. Replace with actual image search API.',
         },
         {
           id: '2',
           url: 'https://picsum.photos/800/600?random=2',
           thumbnail: 'https://picsum.photos/200/150?random=2',
-          title: data?.query || 'Sample Image 2',
+          title: (data as any)?.query || 'Sample Image 2',
           description: 'This is a placeholder image. Replace with actual image search API.',
         },
         {
           id: '3',
           url: 'https://picsum.photos/800/600?random=3',
           thumbnail: 'https://picsum.photos/200/150?random=3',
-          title: data?.query || 'Sample Image 3',
+          title: (data as any)?.query || 'Sample Image 3',
           description: 'This is a placeholder image. Replace with actual image search API.',
         }
       ],
-      query: data?.query || 'default',
+      query: (data as any)?.query || 'default',
       timestamp: new Date().toISOString(),
     };
   },
 
-  async getCreate_search_interface(query: any): Promise<any> {
+  async getCreate_search_interface(data: any): Promise<any> {
     // TODO: Implement retrieval logic
-    console.log('Retrieving create_search_interface with query:', query);
+    console.log('Retrieving create_search_interface with query:', data);
     return {
       images: [
         {
           id: '1',
           url: 'https://picsum.photos/800/600?random=1',
           thumbnail: 'https://picsum.photos/200/150?random=1',
-          title: data?.query || 'Sample Image 1',
+          title: (data as any)?.query || 'Sample Image 1',
           description: 'This is a placeholder image. Replace with actual image search API.',
         },
         {
           id: '2',
           url: 'https://picsum.photos/800/600?random=2',
           thumbnail: 'https://picsum.photos/200/150?random=2',
-          title: data?.query || 'Sample Image 2',
+          title: (data as any)?.query || 'Sample Image 2',
           description: 'This is a placeholder image. Replace with actual image search API.',
         },
         {
           id: '3',
           url: 'https://picsum.photos/800/600?random=3',
           thumbnail: 'https://picsum.photos/200/150?random=3',
-          title: data?.query || 'Sample Image 3',
+          title: (data as any)?.query || 'Sample Image 3',
           description: 'This is a placeholder image. Replace with actual image search API.',
         }
       ],
-      query: data?.query || 'default',
+      query: (data as any)?.query || 'default',
       timestamp: new Date().toISOString(),
     };
   }

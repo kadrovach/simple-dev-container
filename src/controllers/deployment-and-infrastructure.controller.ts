@@ -25,7 +25,7 @@ export const deploymentandinfrastructureController = {
 
   async getSet_up_github_repository(req: Request, res: Response): Promise<void> {
     try {
-      const result = await deploymentandinfrastructureService.getSet_up_github_repository(req.query);
+      const result = await deploymentandinfrastructureService.getSet_up_github_repository(req.query as any);
       res.json({ success: true, data: result });
     } catch (error: any) {
       res.status(400).json({ success: false, error: error.message });
@@ -55,7 +55,7 @@ export const deploymentandinfrastructureController = {
 
   async getCreate_docker_container(req: Request, res: Response): Promise<void> {
     try {
-      const result = await deploymentandinfrastructureService.getCreate_docker_container(req.query);
+      const result = await deploymentandinfrastructureService.getCreate_docker_container(req.query as any);
       res.json({ success: true, data: result });
     } catch (error: any) {
       res.status(400).json({ success: false, error: error.message });

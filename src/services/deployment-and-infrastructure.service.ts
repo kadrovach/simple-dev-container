@@ -18,9 +18,9 @@ export const deploymentandinfrastructureService = {
     };
   },
 
-  async getSet_up_github_repository(query: any): Promise<any> {
+  async getSet_up_github_repository(data: any): Promise<any> {
     // TODO: Implement retrieval logic
-    console.log('Retrieving set_up_github_repository with query:', query);
+    console.log('Retrieving set_up_github_repository with query:', data);
     return {
       message: 'Set Up GitHub Repository executed successfully',
       input: data,
@@ -43,9 +43,9 @@ export const deploymentandinfrastructureService = {
     };
   },
 
-  async getCreate_docker_container(query: any): Promise<any> {
+  async getCreate_docker_container(data: any): Promise<any> {
     // TODO: Implement retrieval logic
-    console.log('Retrieving create_docker_container with query:', query);
+    console.log('Retrieving create_docker_container with query:', data);
     return {
       message: 'Create Docker Container executed successfully',
       input: data,

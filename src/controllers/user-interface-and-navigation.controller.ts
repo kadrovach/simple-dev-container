@@ -25,7 +25,7 @@ export const userinterfaceandnavigationController = {
 
   async getCreate_home_page(req: Request, res: Response): Promise<void> {
     try {
-      const result = await userinterfaceandnavigationService.getCreate_home_page(req.query);
+      const result = await userinterfaceandnavigationService.getCreate_home_page(req.query as any);
       res.json({ success: true, data: result });
     } catch (error: any) {
       res.status(400).json({ success: false, error: error.message });
@@ -55,7 +55,7 @@ export const userinterfaceandnavigationController = {
 
   async getCreate_login_page(req: Request, res: Response): Promise<void> {
     try {
-      const result = await userinterfaceandnavigationService.getCreate_login_page(req.query);
+      const result = await userinterfaceandnavigationService.getCreate_login_page(req.query as any);
       res.json({ success: true, data: result });
     } catch (error: any) {
       res.status(400).json({ success: false, error: error.message });
@@ -85,7 +85,7 @@ export const userinterfaceandnavigationController = {
 
   async getCreate_search_interface(req: Request, res: Response): Promise<void> {
     try {
-      const result = await userinterfaceandnavigationService.getCreate_search_interface(req.query);
+      const result = await userinterfaceandnavigationService.getCreate_search_interface(req.query as any);
       res.json({ success: true, data: result });
     } catch (error: any) {
       res.status(400).json({ success: false, error: error.message });
