@@ -9,6 +9,8 @@ services:
     environment:
       - NODE_ENV=production
       - PORT=3000
+    networks:
+      - dev-automation-network
     restart: unless-stopped
     healthcheck:
       test: ["CMD", "wget", "--no-verbose", "--tries=1", "--spider", "http://localhost:3000/health"]
@@ -16,3 +18,8 @@ services:
       timeout: 3s
       retries: 3
       start_period: 5s
+
+networks:
+  dev-automation-network:
+    external: true
+    name: dev-automation_dev-automation-network
