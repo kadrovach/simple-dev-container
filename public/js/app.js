@@ -29,7 +29,7 @@ if (loginForm) {
 
     try {
       // Find login endpoint dynamically
-      const response = await fetch('/api/user-interface-and-navigation/login_page', {
+      const response = await fetch('/api/user-interface-and-navigation/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -103,7 +103,7 @@ if (searchForm) {
     resultsDiv.innerHTML = '';
 
     try {
-      const response = await fetch('/api/image-search-functionality/search_for_images', {
+      const response = await fetch('/api/image-search-functionality/search', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

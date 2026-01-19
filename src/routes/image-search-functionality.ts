@@ -14,14 +14,12 @@ router.get('/implement_unsplash_api_integration', imagesearchfunctionalityContro
 // Given: The system has retrieved an image from Unsplash
 // When: The API call completes successfully
 // Then: The user sees the first matching image displayed on the page
-router.post('/display_search_results', imagesearchfunctionalityController.display_search_results);
-router.get('/display_search_results', imagesearchfunctionalityController.getDisplay_search_results);
+router.post('/search', imagesearchfunctionalityController.display_search_results);
 
 // Implement Search Again Functionality
 // Given: A user has viewed a search result image
 // When: The system asks if they want to search for something else
 // Then: The user can choose to perform another search and return to the search page
-router.post('/implement_search_again_functionality', imagesearchfunctionalityController.implement_search_again_functionality);
-router.get('/implement_search_again_functionality', imagesearchfunctionalityController.getImplement_search_again_functionality);
+router.post('/search', imagesearchfunctionalityController.implement_search_again_functionality);
 
 export { router as imagesearchfunctionalityRouter };

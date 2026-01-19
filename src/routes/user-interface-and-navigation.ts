@@ -14,14 +14,12 @@ router.get('/create_home_page', userinterfaceandnavigationController.getCreate_h
 // Given: A user wants to access the search functionality
 // When: The user navigates to the login page
 // Then: The user sees a login form that accepts any email and password combination
-router.post('/create_login_page', userinterfaceandnavigationController.create_login_page);
-router.get('/create_login_page', userinterfaceandnavigationController.getCreate_login_page);
+router.post('/login', userinterfaceandnavigationController.create_login_page);
 
 // Create Search Interface
 // Given: A user has successfully logged in
 // When: The user is redirected after login
 // Then: The user sees a search page with an input field for image queries
-router.post('/create_search_interface', userinterfaceandnavigationController.create_search_interface);
-router.get('/create_search_interface', userinterfaceandnavigationController.getCreate_search_interface);
+router.post('/search', userinterfaceandnavigationController.create_search_interface);
 
 export { router as userinterfaceandnavigationRouter };
