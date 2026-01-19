@@ -3,7 +3,7 @@ version: '3.8'
 services:
   app:
     build: .
-    container_name: generated-app-c105ca34-f800-44a2-9caf-1201770aa9ea
+    container_name: generated-app-container-c105ca34-f800-44a2-9caf-1201770aa9ea
     ports:
       - "4000:3000"
     environment:
