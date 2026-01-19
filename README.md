@@ -43,9 +43,62 @@ docker-compose up --build
 
 The application will be available at http://localhost:4000
 
+## Important Notes
+
+⚠️ **Use HTTP, not HTTPS** when connecting to this local development server:
+- ✅ Correct: `http://localhost:4000`
+- ❌ Incorrect: `https://localhost:4000`
+
 ## API Endpoints
 
+### Core Endpoints
+- `GET /` - API information and available endpoints
 - `GET /health` - Health check endpoint
+
+### Generated API Routes
+
+All API routes are prefixed with `/api/`:
+
+
+#### User Interface and Navigation (`/api/user-interface-and-navigation`)
+
+- **POST** `/api/user-interface-and-navigation/create_home_page` - Create Home Page
+- **GET** `/api/user-interface-and-navigation/create_home_page` - Get Create Home Page
+- **POST** `/api/user-interface-and-navigation/create_login_page` - Create Login Page
+- **GET** `/api/user-interface-and-navigation/create_login_page` - Get Create Login Page
+- **POST** `/api/user-interface-and-navigation/create_search_interface` - Create Search Interface
+- **GET** `/api/user-interface-and-navigation/create_search_interface` - Get Create Search Interface
+
+#### Image Search Functionality (`/api/image-search-functionality`)
+
+- **POST** `/api/image-search-functionality/implement_unsplash_api_integration` - Implement Unsplash API Integration
+- **GET** `/api/image-search-functionality/implement_unsplash_api_integration` - Get Implement Unsplash API Integration
+- **POST** `/api/image-search-functionality/display_search_results` - Display Search Results
+- **GET** `/api/image-search-functionality/display_search_results` - Get Display Search Results
+- **POST** `/api/image-search-functionality/implement_search_again_functionality` - Implement Search Again Functionality
+- **GET** `/api/image-search-functionality/implement_search_again_functionality` - Get Implement Search Again Functionality
+
+#### Deployment and Infrastructure (`/api/deployment-and-infrastructure`)
+
+- **POST** `/api/deployment-and-infrastructure/set_up_github_repository` - Set Up GitHub Repository
+- **GET** `/api/deployment-and-infrastructure/set_up_github_repository` - Get Set Up GitHub Repository
+- **POST** `/api/deployment-and-infrastructure/create_docker_container` - Create Docker Container
+- **GET** `/api/deployment-and-infrastructure/create_docker_container` - Get Create Docker Container
+
+### Example Usage
+
+```bash
+# Health check
+curl http://localhost:4000/health
+
+# API root
+curl http://localhost:4000/
+
+# Example API call (replace with actual endpoint)
+curl -X POST http://localhost:4000/api/your-endpoint \
+  -H "Content-Type: application/json" \
+  -d '{"key": "value"}'
+```
 
 ## Epics
 

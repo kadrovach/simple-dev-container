@@ -19,6 +19,19 @@ app.get('/health', (_req, res) => {
   res.json({ status: 'healthy', timestamp: new Date().toISOString() });
 });
 
+// Root endpoint
+app.get('/', (_req, res) => {
+  res.json({
+    message: 'API is running',
+    version: '1.0.0',
+    endpoints: {
+      health: '/health',
+      api: '/api/*'
+    },
+    timestamp: new Date().toISOString()
+  });
+});
+
 // Routes
 app.use('/api/user-interface-and-navigation', userinterfaceandnavigationRouter);
   app.use('/api/image-search-functionality', imagesearchfunctionalityRouter);

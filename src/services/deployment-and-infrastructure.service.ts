@@ -10,6 +10,7 @@ export const deploymentandinfrastructureService = {
   async set_up_github_repository(data: any): Promise<any> {
     // TODO: Implement business logic for: The project is ready for deployment
     // Expected outcome: The code is stored in the specified GitHub repository
+    console.log('Executing set_up_github_repository with data:', data);
     return {
       message: 'Set Up GitHub Repository executed successfully',
       input: data,
@@ -19,9 +20,10 @@ export const deploymentandinfrastructureService = {
 
   async getSet_up_github_repository(query: any): Promise<any> {
     // TODO: Implement retrieval logic
+    console.log('Retrieving set_up_github_repository with query:', query);
     return {
-      message: 'Set Up GitHub Repository data retrieved',
-      query,
+      message: 'Set Up GitHub Repository executed successfully',
+      input: data,
       timestamp: new Date().toISOString(),
     };
   },
@@ -33,6 +35,7 @@ export const deploymentandinfrastructureService = {
   async create_docker_container(data: any): Promise<any> {
     // TODO: Implement business logic for: Someone wants to test or deploy the application
     // Expected outcome: The application runs successfully in a single Node.js Docker container
+    console.log('Executing create_docker_container with data:', data);
     return {
       message: 'Create Docker Container executed successfully',
       input: data,
@@ -42,9 +45,10 @@ export const deploymentandinfrastructureService = {
 
   async getCreate_docker_container(query: any): Promise<any> {
     // TODO: Implement retrieval logic
+    console.log('Retrieving create_docker_container with query:', query);
     return {
-      message: 'Create Docker Container data retrieved',
-      query,
+      message: 'Create Docker Container executed successfully',
+      input: data,
       timestamp: new Date().toISOString(),
     };
   }

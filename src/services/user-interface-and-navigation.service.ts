@@ -10,6 +10,7 @@ export const userinterfaceandnavigationService = {
   async create_home_page(data: any): Promise<any> {
     // TODO: Implement business logic for: The home page loads
     // Expected outcome: The user sees an attractive landing page promoting image search functionality
+    console.log('Executing create_home_page with data:', data);
     return {
       message: 'Create Home Page executed successfully',
       input: data,
@@ -19,9 +20,10 @@ export const userinterfaceandnavigationService = {
 
   async getCreate_home_page(query: any): Promise<any> {
     // TODO: Implement retrieval logic
+    console.log('Retrieving create_home_page with query:', query);
     return {
-      message: 'Create Home Page data retrieved',
-      query,
+      message: 'Create Home Page executed successfully',
+      input: data,
       timestamp: new Date().toISOString(),
     };
   },
@@ -33,18 +35,32 @@ export const userinterfaceandnavigationService = {
   async create_login_page(data: any): Promise<any> {
     // TODO: Implement business logic for: The user navigates to the login page
     // Expected outcome: The user sees a login form that accepts any email and password combination
+    console.log('Executing create_login_page with data:', data);
     return {
-      message: 'Create Login Page executed successfully',
-      input: data,
+      success: true,
+      user: {
+        id: '123',
+        username: data?.username || 'user',
+        email: data?.email || 'user@example.com',
+        token: 'sample-jwt-token-' + Date.now(),
+      },
+      message: 'Login successful',
       timestamp: new Date().toISOString(),
     };
   },
 
   async getCreate_login_page(query: any): Promise<any> {
     // TODO: Implement retrieval logic
+    console.log('Retrieving create_login_page with query:', query);
     return {
-      message: 'Create Login Page data retrieved',
-      query,
+      success: true,
+      user: {
+        id: '123',
+        username: data?.username || 'user',
+        email: data?.email || 'user@example.com',
+        token: 'sample-jwt-token-' + Date.now(),
+      },
+      message: 'Login successful',
       timestamp: new Date().toISOString(),
     };
   },
@@ -56,18 +72,64 @@ export const userinterfaceandnavigationService = {
   async create_search_interface(data: any): Promise<any> {
     // TODO: Implement business logic for: The user is redirected after login
     // Expected outcome: The user sees a search page with an input field for image queries
+    console.log('Executing create_search_interface with data:', data);
     return {
-      message: 'Create Search Interface executed successfully',
-      input: data,
+      images: [
+        {
+          id: '1',
+          url: 'https://picsum.photos/800/600?random=1',
+          thumbnail: 'https://picsum.photos/200/150?random=1',
+          title: data?.query || 'Sample Image 1',
+          description: 'This is a placeholder image. Replace with actual image search API.',
+        },
+        {
+          id: '2',
+          url: 'https://picsum.photos/800/600?random=2',
+          thumbnail: 'https://picsum.photos/200/150?random=2',
+          title: data?.query || 'Sample Image 2',
+          description: 'This is a placeholder image. Replace with actual image search API.',
+        },
+        {
+          id: '3',
+          url: 'https://picsum.photos/800/600?random=3',
+          thumbnail: 'https://picsum.photos/200/150?random=3',
+          title: data?.query || 'Sample Image 3',
+          description: 'This is a placeholder image. Replace with actual image search API.',
+        }
+      ],
+      query: data?.query || 'default',
       timestamp: new Date().toISOString(),
     };
   },
 
   async getCreate_search_interface(query: any): Promise<any> {
     // TODO: Implement retrieval logic
+    console.log('Retrieving create_search_interface with query:', query);
     return {
-      message: 'Create Search Interface data retrieved',
-      query,
+      images: [
+        {
+          id: '1',
+          url: 'https://picsum.photos/800/600?random=1',
+          thumbnail: 'https://picsum.photos/200/150?random=1',
+          title: data?.query || 'Sample Image 1',
+          description: 'This is a placeholder image. Replace with actual image search API.',
+        },
+        {
+          id: '2',
+          url: 'https://picsum.photos/800/600?random=2',
+          thumbnail: 'https://picsum.photos/200/150?random=2',
+          title: data?.query || 'Sample Image 2',
+          description: 'This is a placeholder image. Replace with actual image search API.',
+        },
+        {
+          id: '3',
+          url: 'https://picsum.photos/800/600?random=3',
+          thumbnail: 'https://picsum.photos/200/150?random=3',
+          title: data?.query || 'Sample Image 3',
+          description: 'This is a placeholder image. Replace with actual image search API.',
+        }
+      ],
+      query: data?.query || 'default',
       timestamp: new Date().toISOString(),
     };
   }
